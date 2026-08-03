@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --base-100: #d0d3da;
+  --base-200: #1c1c1e;
+  --base-300: #911d1d;
+  --base-400: #b38a31;
+  --base-500: #c260ec;
+  --base-600: #06387d;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "Geist Sans", sans-serif;
+  font-size: clamp(2rem, 6vw, 12rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+p {
+  font-family: "Monospace", monospace;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+section .four {
+  height: 200svh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  padding: 2rem;
+  /* transform: rotate(30deg); */
+  transform-origin: bottom left;
+  will-change: transform;
+}
+
+.one .container{
+  background: var(--base-100);
+  color: black;
+}
+
+.two .container{
+  background: var(--base-200);
+  color: white;
+}
+
+.three .container{
+  background: var(--base-300);
+  color: black;
+}
+
+.four .container{
+  background: var(--base-400);
+  color: black;
+}
+
+.five .container{
+  background: var(--base-500);
+  color: black;
+}
+
+.six .container{
+  background: var(--base-600);
+  color: white;
+}
+
+.container .col {
+  display: flex;
+  flex : 1;
+}
+
+.container .col .img {
+  width: 35%;
+  height: auto;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.one .container .col:nth-child(2),
+.five .container .col:nth-child(2),
+.six .container .col:nth-child(2) {
+  align-items: flex-end;
+}
+
+.two .container .col:nth-child(1),
+.three .container .col:nth-child(2)
+{
+  justify-content: center;
+  align-items: center;
+}
+
+.two .container .col:nth-child(2),
+.three .container .col:nth-child(1) {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.four .container{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.four .img {
+  width:30%;
+  margin-bottom: 2rem;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 70svh;
+  min-height: 70svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color:black;
+  padding: 2rem;
+}
